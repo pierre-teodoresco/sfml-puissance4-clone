@@ -24,4 +24,5 @@ public:
     int getHeight() const;
     int getWidth() const;
     void clear();
+    bool isFull() const;
 };

@@ -205,8 +205,8 @@ void Game::play(const sf::Event& event, Grid& grid)
         int col = event.mouseButton.x / utils::CELL_WIDTH;
         int row = throwToken(col, grid);
 
-        // Game keep going until the grid is full or a player won
-        m_isRunning = row < 0 || !checkWin(col, row, grid);
+        // Game keep going while the grid is not full and no player won
+        m_isRunning = !(grid.isFull() || checkWin(col, row, grid));
     }
 }
 

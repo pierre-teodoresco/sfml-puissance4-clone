@@ -81,3 +81,10 @@ void Grid::clear()
         }
     }
 }
+
+bool Grid::isFull() const {
+    bool notFull = false;
+    for (int i = 0; i < m_width; i++)
+        notFull = m_grid[i][0] == Grid::CellState::Empty;
+    return !notFull;
+}
